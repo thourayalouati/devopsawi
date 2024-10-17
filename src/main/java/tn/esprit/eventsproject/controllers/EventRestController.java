@@ -1,6 +1,7 @@
 package tn.esprit.eventsproject.controllers;
 
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 import tn.esprit.eventsproject.entities.Event;
 import tn.esprit.eventsproject.entities.Logistics;
@@ -13,11 +14,13 @@ import java.util.List;
 @RequiredArgsConstructor
 @RequestMapping("event")
 @RestController
+@Slf4j
 public class EventRestController {
     private final IEventServices eventServices;
 
     @PostMapping("/addPart")
     public Participant addParticipant(@RequestBody Participant participant){
+        log.info("Hello");
         return eventServices.addParticipant(participant);
     }
     @PostMapping("/addEvent/{id}")
