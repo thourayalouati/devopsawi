@@ -22,6 +22,7 @@ public class EventRestController {
     public Participant addParticipant(@RequestBody Participant participant){
         log.info("Hello");
         log.info("on branch user-management");
+        log.info("git from Intellij");
         return eventServices.addParticipant(participant);
     }
     @PostMapping("/addEvent/{id}")
